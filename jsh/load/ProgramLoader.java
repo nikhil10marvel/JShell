@@ -88,7 +88,7 @@ public class ProgramLoader {
     }
     
 //    Test, create  sample program #Debug
-//    public static void main(String[] args) {
+    public static void main(String[] args) {
 //        try {
 //            Program sampleProgram = new Program();
 //            sampleProgram.program = "sample";
@@ -105,7 +105,7 @@ public class ProgramLoader {
 //        } catch (IOException ex) {
 //            Logger.getLogger(ProgramLoader.class.getName()).log(Level.SEVERE, null, ex);
 //        }
-//        new ProgramLoader().loadProgram("sample.jsh");
-//    }
+        new ProgramLoader().loadProgram("sample.jsh");
+    }
     
 }

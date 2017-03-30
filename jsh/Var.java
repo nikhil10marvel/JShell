@@ -3,6 +3,7 @@ package jsh;
 import java.util.ArrayList;
 import jsh.var_types.BoolVar;
 import jsh.var_types.FloatVar;
+import jsh.var_types.IntVar;
 import jsh.var_types.StingVar;
 
 /**
@@ -13,6 +14,7 @@ public class Var {
 
     public ArrayList<FloatVar> floats = new ArrayList<FloatVar>();
     public ArrayList<StingVar> strings = new ArrayList<StingVar>();
+    public ArrayList<IntVar> ints = new ArrayList<IntVar>();
     public ArrayList<BoolVar> bools = new ArrayList<BoolVar>();
     
     public boolean FindBool(String name){
@@ -43,6 +45,17 @@ public class Var {
             }
         }
         return str;
+    }
+    
+    public int FindINT(String name){
+        int integer = 0;
+        for (IntVar inter : ints) {
+            if(inter.varname.equals(name)){
+                integer = inter.value;
+                break;
+            }
+        }
+        return integer;
     }
     
 }

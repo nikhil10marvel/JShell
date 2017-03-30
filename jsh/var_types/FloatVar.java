@@ -13,5 +13,10 @@ public class FloatVar {
     
     public String varname;
     public float value;
+
+    public FloatVar(String varname, float value) {
+        this.varname = varname;
+        this.value = value;
+    }
     
 }

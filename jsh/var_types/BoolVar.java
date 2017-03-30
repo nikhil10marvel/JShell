@@ -13,5 +13,10 @@ public class BoolVar {
  
     public String varname;
     public boolean value;
+
+    public BoolVar(String varname, boolean value) {
+        this.varname = varname;
+        this.value = value;
+    }
     
 }
