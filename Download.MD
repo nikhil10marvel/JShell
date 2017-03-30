@@ -7,7 +7,8 @@
 #### (2) [Zip File(To be extracted, obvious)](https://drive.google.com/open?id=0B6qH0pEFi-LcblZRUUszM1lNMDQ)
 
 ## Execution for Linux Users
-Linux USERS will have to download an extra [run.sh](run.sh) file and change permissions for execution
+Linux USERS will have to download an extra [run.sh](run.sh) file and change permissions for execution  
+Run.sh file must be placed in the unzipped directory.
 
 ## Execution for Windows Users
 Windows users if using the installer can find JShell in start menu  
