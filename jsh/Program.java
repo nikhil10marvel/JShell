@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class Program implements Serializable{
     
     public Method[] methods;
-    public Var vars;
+    public Var vars = new Var();
     public String program;
     
     public Method getMethod(String name){

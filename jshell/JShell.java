@@ -1035,8 +1035,7 @@ public class JShell extends JFrame {
     public static void main(String[] params) throws IOException {
         try {
             Thread.sleep(4750);
-        } catch (Exception e) {
-        }
+        } catch (Exception e) {}
         JOptionPane.showMessageDialog(null, "Welcome");
         System.out.println("Welcome to JShell 2.0");
         shell = ShellFactory.createConsoleShell("JShell", "JShell", new JShell());
