@@ -21,5 +21,4 @@ The commons.js file also contains useful methods and global variables. The commo
 
 #### External Links
 [Learn Javascript](https://www.w3schools.com/js/)  
-[Nashorn](https://en.wikipedia.org/wiki/Nashorn_(JavaScript_engine))
-[Commons](commons.js)  
+[Nashorn](https://en.wikipedia.org/wiki/Nashorn_(JavaScript_engine))  
