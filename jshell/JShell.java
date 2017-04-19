@@ -37,6 +37,7 @@ import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
 import java.util.Arrays;
+import javax.script.ScriptException;
 import jsh.load.ProgramLoader;
 import util.Browser;
 import util.InstallMaker;
@@ -1033,7 +1034,16 @@ public class JShell extends JFrame {
         browser = new Browser();
         browser.run(start);
     }
-
+    
+    @Command
+    public void OpenScriptingEnd(String arg){
+        try {
+            String[] args = arg.split(" ");
+            openscriptingend.OpenScriptingEnd.main(args);
+        } catch (ScriptException ex) {
+            Logger.getLogger(JShell.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     public static void main(String[] params) throws IOException, CLIException {
         shell = ShellFactory.createConsoleShell("JShell", "JShell", new JShell());
         if(params.length > 0){
