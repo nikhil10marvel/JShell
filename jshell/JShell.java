@@ -1,5 +1,6 @@
 package jshell;
 
+import asg.cliche.CLIException;
 import util.CoderEdit;
 import asg.cliche.ShellFactory;
 import asg.cliche.Command;
@@ -35,6 +36,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
+import java.util.Arrays;
 import jsh.load.ProgramLoader;
 import util.Browser;
 import util.InstallMaker;
@@ -1032,14 +1034,21 @@ public class JShell extends JFrame {
         browser.run(start);
     }
 
-    public static void main(String[] params) throws IOException {
-        try {
-            Thread.sleep(4750);
-        } catch (Exception e) {}
-        JOptionPane.showMessageDialog(null, "Welcome");
-        System.out.println("Welcome to JShell 2.0");
+    public static void main(String[] params) throws IOException, CLIException {
         shell = ShellFactory.createConsoleShell("JShell", "JShell", new JShell());
-        shell.commandLoop();
+        if(params.length > 0){
+            if(params[0].startsWith("-c")) {
+                String command = Arrays.toString(params).replaceAll(",", " ").replaceAll("\\[", "").replaceAll("\\]", "").replaceAll(String.valueOf('<'), String.valueOf('"')).replaceAll(String.valueOf('>'), String.valueOf('"')).substring(3);
+                shell.processLine(command);
+            }
+        } else {
+            try {
+                Thread.sleep(4750);
+            } catch (Exception e) {}
+            JOptionPane.showMessageDialog(null, "Welcome");
+            System.out.println("Welcome to JShell 2.0");
+            shell.commandLoop();
+        }
         gc();
     }
 
