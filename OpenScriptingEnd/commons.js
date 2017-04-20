@@ -1,9 +1,17 @@
 var RawTCPServer = type("ose.raw.RawTCPServer");
 var RawTCPClient = type("ose.raw.RawTCPClient");
+var AbstractRawTCPServer = Java.extend(RawTCPServer);
+var AbstractRawTCPClient = Java.extend(RawTCPClient);
 var File = type("java.io.File");
 var Scanner = type("java.util.Scanner");
 var Logger = type("java.util.logging.Logger");
 var LoggingLevel = type("java.util.logging.Level");
+var LOG_Info = LoggingLevel.INFO;
+var LOG_Severe = LoggingLevel.SEVERE;
+var LOG_Warning = LoggingLevel.WARNING;
+var sys_out = java.lang.System.out;
+var sys_in = java.lang.System.in;
+var sys_err = java.lang.System.err;
 
 function type(program){
     return Java.type(program);
