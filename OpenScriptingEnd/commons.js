@@ -21,7 +21,7 @@ rootlogger.severe = function (msg){
     getlogger("root").severe(msg);
 }
 rootlogger.warn = function (msg){
-    getlogger("root").warn(msg);
+    getlogger("root").warning(msg);
 }
 
 function type(program){
