@@ -13,6 +13,16 @@ var sys = new Object();
 sys.out = java.lang.System.out;
 sys.err = java.lang.System.err;
 sys.in = java.lang.System.in;
+var rootlogger = new Object();
+rootlogger.info = function (msg) {
+    getlogger("root").info(msg);
+}
+rootlogger.severe = function (msg){
+    getlogger("root").severe(msg);
+}
+rootlogger.warn = function (msg){
+    getlogger("root").warn(msg);
+}
 
 function type(program){
     return Java.type(program);
@@ -38,4 +48,8 @@ function input(prompt){
 
 function getlogger(name){
     return Logger.getLogger(name);
+}
+
+function log(level, msg){
+    getlogger("root").log(level, msg);
 }
