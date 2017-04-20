@@ -9,9 +9,10 @@ var LoggingLevel = type("java.util.logging.Level");
 var LOG_Info = LoggingLevel.INFO;
 var LOG_Severe = LoggingLevel.SEVERE;
 var LOG_Warning = LoggingLevel.WARNING;
-var sys_out = java.lang.System.out;
-var sys_in = java.lang.System.in;
-var sys_err = java.lang.System.err;
+var sys = new Object();
+sys.out = java.lang.System.out;
+sys.err = java.lang.System.err;
+sys.in = java.lang.System.in;
 
 function type(program){
     return Java.type(program);
