@@ -13,6 +13,16 @@ var sys = new Object();
 sys.out = java.lang.System.out;
 sys.err = java.lang.System.err;
 sys.in = java.lang.System.in;
+var rootlogger = new Object();
+rootlogger.info = function (msg) {
+    getlogger("root").info(msg);
+}
+rootlogger.severe = function (msg){
+    getlogger("root").severe(msg);
+}
+rootlogger.warn = function (msg){
+    getlogger("root").warning(msg);
+}
 
 function type(program){
     return Java.type(program);
@@ -40,6 +50,7 @@ function getlogger(name){
     return Logger.getLogger(name);
 }
 
+<<<<<<< HEAD
 var objectutil = new Object();
 objectutil.getAttr = function (attr, type, obj){
     for(var prop in obj){
@@ -71,3 +82,8 @@ objectutil.getKeyAttr = function (attr, obj){
     }
 };
 
+=======
+function log(level, msg){
+    getlogger("root").log(level, msg);
+}
+>>>>>>> 6a7148b8c9ced499d97d7276136c32e0b23d73e6
