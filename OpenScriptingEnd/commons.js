@@ -39,3 +39,35 @@ function input(prompt){
 function getlogger(name){
     return Logger.getLogger(name);
 }
+
+var objectutil = new Object();
+objectutil.getAttr = function (attr, type, obj){
+    for(var prop in obj){
+        if(typeof prop === type){
+            if(prop === attr){
+                return prop;
+            } else {
+                return "No Property " + attr;
+            }
+        }
+    }
+};
+objectutil.getAttrSub = function (attr, type, obj){
+    for(var prop in obj){
+        if(obj.hasOwnProperty(prop)){
+            if(typeof prop === type){
+                if(prop === attr){
+                    return prop;
+                }
+            }
+        }
+    }
+};
+objectutil.getKeyAttr = function (attr, obj){
+    for (var prop in Object.keys(obj)){
+        if(prop === attr){
+            return prop
+        }
+    }
+};
+

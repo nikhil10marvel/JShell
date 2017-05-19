@@ -30,6 +30,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.MenuItem;
 import java.awt.MenuShortcut;
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
 import static java.lang.System.gc;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
@@ -41,6 +42,7 @@ import javax.script.ScriptException;
 import jsh.load.ProgramLoader;
 import util.Browser;
 import util.InstallMaker;
+import util.SplashFrame;
 import util.Zipper;
 
 public class JShell extends JFrame {
@@ -1052,10 +1054,10 @@ public class JShell extends JFrame {
                 shell.processLine(command);
             }
         } else {
-            try {
-                Thread.sleep(4750);
-            } catch (Exception e) {}
-            JOptionPane.showMessageDialog(null, "Welcome");
+            BufferedImage img = SplashFrame.BufferedImageLoader.load(JShell.class.getClassLoader().getResourceAsStream("jshell/splash.png"));
+            SplashFrame splash_screen = new SplashFrame(img.getWidth(), img.getHeight());
+            splash_screen.map.put(0, SplashFrame.Splash.load(img, 0));
+            splash_screen.show(3700);
             System.out.println("Welcome to JShell 2.0");
             shell.commandLoop();
         }
