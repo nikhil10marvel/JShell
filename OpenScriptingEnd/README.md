@@ -5,8 +5,10 @@ OpenScriptingEnd is a functionality that will be included with JShell.
 It make even the average user more productive. It uses javascript parser nashorn to parse javascript files.  
 
 #### Parsing Javascript? Even a browser can do that what's special ?
-The special thing is it's not regular javascript, but a better one.  
-This javascript is able to make TCPServers and TCPClients ( more to come soon ).
+Unlike regular JavaScript OpenScriptingEnd runs on the system rather than the browser.
+Therefore, it has great power in controling user's files, storing configuration, compressing files and folders,  
+Archiving, etc. OpenScriptingEnd can also interact with Java.
+The special thing is it's not reg
 
 #### Why Javascript?
 The aim of OpenScriptingEnd is to make Scripting at users side simple and also provide control to the user.
