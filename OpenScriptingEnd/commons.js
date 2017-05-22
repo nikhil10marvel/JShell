@@ -50,7 +50,6 @@ function getlogger(name){
     return Logger.getLogger(name);
 }
 
-<<<<<<< HEAD
 var objectutil = new Object();
 objectutil.getAttr = function (attr, type, obj){
     for(var prop in obj){
@@ -82,8 +81,6 @@ objectutil.getKeyAttr = function (attr, obj){
     }
 };
 
-=======
 function log(level, msg){
     getlogger("root").log(level, msg);
 }
->>>>>>> 6a7148b8c9ced499d97d7276136c32e0b23d73e6
